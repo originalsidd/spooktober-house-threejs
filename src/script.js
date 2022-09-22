@@ -86,7 +86,7 @@ walls.geometry.setAttribute(
     'uv2',
     new THREE.Float32BufferAttribute(walls.geometry.attributes.uv.array, 2)
 );
-walls.position.y = 2.5 / 2;
+walls.position.y = 2.5 / 2 + 0.001;
 house.add(walls);
 
 // Roof
@@ -121,7 +121,7 @@ door.geometry.setAttribute(
     new THREE.Float32BufferAttribute(door.geometry.attributes.uv.array, 2)
 );
 door.position.y = 1;
-door.position.z = 2 + 0.001;
+door.position.z = 2 - 0.01;
 house.add(door);
 
 // Bushes
@@ -176,6 +176,7 @@ const floor = new THREE.Mesh(
         roughnessMap: grassRoughnessTexture,
     })
 );
+// floor.material.side = THREE.DoubleSide;
 floor.geometry.setAttribute(
     'uv2',
     new THREE.Float32BufferAttribute(floor.geometry.attributes.uv.array, 2)
